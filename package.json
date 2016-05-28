@@ -1,0 +1,24 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "see git repo",
+  "main": "app.js",
+  "scripts": {
+    "start": "forever start app.js",
+    "stop": "forever stopall",
+    "log": "forever logs app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karimsa/web-app-dev.git"
+  },
+  "author": "Karim Alibhai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/karimsa/web-app-dev/issues"
+  },
+  "homepage": "https://github.com/karimsa/web-app-dev#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
