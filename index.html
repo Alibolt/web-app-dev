@@ -1,46 +1,192 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="webapps">
 <head>
     <meta charset="UTF-8">
-    <title>Web-based Application Development</title>
-		<base href="/">
+    <title>Web Application Development</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
-		<link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,700' rel='stylesheet' type='text/css'>
-	
+
+    <meta name="title" content="Web Application Development">
+    <meta name="description" content="Are you ready to transform the world with practical web development skills? Whether you are new to development or want to enhance your skills, this program will give you the knowledge you need to design modern web applications using HTML5, CSS, JavaScript, and Node.js. Karim Alibhai will be teaching a class on web development at Don Mills JK.">
+    <meta name="author" content="Karim Alibhai">
+    <meta name="keywords" content="web,application,development,course,introduction,ismaili,council,ontario,don mills,node.js,javascript">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Maven+Pro:400,700">
+    <link rel="stylesheet" href="vendor/tether/dist/css/tether.min.css">	
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/devices.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/devices.mobile.css">
 </head>
-<body>
-	  <nav class="navbar navbar-full navbar-fixed-top navbar-dark">
-	      <ul class="nav navbar-nav">
-	          <li class="nav-item">
-	            <a class="nav-link" href="#">About</a>
-	          </li>
-	          <li class="nav-item">
-	            <a class="nav-link" href="#">FAQ</a>
-	          </li>
-	          <li class="nav-item">
-	            <a class="nav-link" href="#">Registration</a>
-	          </li>
-	      </ul>
-	      <form class="form-inline pull-xs-right">
-	  	    	<div class="input-group">
-                <input class="form-control" type="text" placeholder="Search for a question ...">
+<body ng-controller="NavController">
+    <nav class="navbar navbar-full navbar-fixed-top navbar-dark">
+        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar">
+            &#9776;
+        </button>
+
+        <div class="collapse navbar-toggleable-xs hidden-sm-up" id="navbar">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home" ng-click="closeNav()">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#register" ng-click="closeNav()">Registration</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#faq" ng-click="closeNav()">FAQ</a>
+                </li>
+            </ul>
+        </div>
+
+        <ul class="nav navbar-nav hidden-sm-down">
+            <li class="nav-item">
+                <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#register">Registration</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#faq">FAQ</a>
+            </li>
+        </ul>
+
+        <form class="form-inline search-form pull-xs-right">
+            <div class="input-group">
+                <input class="form-control" type="text" ng-model="query" ng-change="updateResults()" placeholder="Search for a question ...">
                 <span class="input-group-btn">
-	  							  <button class="btn btn-secondary-outline" type="button">Go</button>
+                    <button class="btn btn-info-outline" type="button">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
                 </span>
             </div>
-	      </form>
-	  </nav>
+        </form>
+    </nav>
 
-    <ng-view></ng-view>
+    <div class="splash text-center" data-animation-step="1" id="home">
+        <div class="overlay"></div>
+        <div>
+            <div class="animation">
+                <div class="text text-center top">
+                    <p class="lead">Web Application Development</p>
+                </div>
+                <div class="device">
+                    <div class="phone-home-button"></div>
+                    <div class="tablet-home-button"></div>
+                    <div class="screen-stand">
+                        <div class="leg"></div>
+                        <div class="foot"></div>
+                    </div>
+                    <div class="display">
+                        <div class="slide1">
+                            <div>The world exists on the <em>web</em> now.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text text-center text-bottom">
+                    <p class="lead">What will you build?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="register">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1 text-center" id="register">
+                    <h2>Ready to register?</h2>
+                    <p class="lead">Registration is cheap and easy. Simply get in touch with the Don Mills Computer Center by emailing <a href="mailto:donmills@gmail.com?Subject=I'd like to register for 'Web Application Development'&Body=Hi, there:\n">donmills@gmail.com</a>.</p>
+                </div>
+            </div>
+            <div class="row">
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <div class="faq">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1 text-center" id="faq">
+                    <h2>Frequently Asked Questions (FAQ)</h2>
+                    <p class="lead">We understand that you would like as much information as possible before you enroll, therefore we have created the following FAQ section.</p>
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px; padding-bottom: 50px; ">
+                <div class="col-xs-12">
+                    <div class="accordion" ng-if="hasQuestions() && !(query.trim() && noResults())">
+                        <div class="panel panel-default" ng-repeat="(question, answerList) in results">
+                            <div class="panel-heading">
+                                <h4 class="panel-title text-xs-center text-md-left" data-toggle="tooltip" data-placement="left" title="See answer">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#{{simplify(question)}}">
+                                      {{question[0].toUpperCase() + question.substr(1)}}?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="panel-collapse collapse" id="{{simplify(question)}}">
+                                <p class="text-justify" ng-repeat="answer in answerList">{{answer}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="uh-oh" ng-if="query.trim() && noResults()">
+                        <p class="lead">Sorry, no such questions exist. Try adjusting your query or submit your question for answering below.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <div class="new-faq">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1 text-center">
+                    <h2>Still have questions?</h2>
+                    <p class="lead">No problem. Just enter your question below and we'll get back to you as soon as possible.</p>
+                    <div class="alert" ng-class="{ 'alert-success': alertShown, 'alert-danger': errorShown }" role="alert" ng-if="alertShown || errorShown">
+                        <button type="button" class="close" ng-click="hideAlert()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>{{errorShown ? 'Error' : 'Success'}}!</strong> {{errorShown ? 'Your question could not be submitted. Please try again later.' : 'Your question has been submitted. Check back soon for the answer.'}}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1 text-center">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Ask whatever is on your mind" ng-model="newFAQ">
+                        <div class="input-group-btn">
+                            <a ng-click="ask()" class="btn btn-info-outline">Ask</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <p>Designed and built by <a href="http://alibhai.co/">Karim Alibhai</a>.</p>
+            <p>Code licensed under <a href="https://github.com/karimsa/web-app-dev/blob/site/LICENSE">MIT</a>.</p>
+        </div>
+    </footer>
+
+    <script>
+      /*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-78690697-1', 'auto');
+      ga('send', 'pageview');*/
+    </script>
 
     <script src="vendor/jquery/dist/jquery.min.js"></script>
-		<script src="vendor/angular/angular.min.js"></script>
-		<script src="vendor/angular-route/angular-route.min.js"></script>
-		<script src="vendor/angular-animate/angular-animate.min.js"></script>
+    <script src="vendor/tether/dist/js/tether.min.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="vendor/angular-animate/angular-animate.min.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>
