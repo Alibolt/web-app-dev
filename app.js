@@ -3,14 +3,7 @@
 const express = require('express'),
       app = express(),
       redirect = express(),
-      smtp = require('nodemailer-smtp-transport'),
-      transport = require('nodemailer').createTransport(smtp({
-          host: 'smtp.gmail.com',
-          auth: {
-              user: 'karim@alibhai.co',
-              pass: 'prmcbrtqyrhemrpu'
-          }
-      })),
+      transport = require('nodemailer').createTransport(`smtps://karim%40alibhai.co:${process.env.MAILPASS}@smtp.gmail.com`),
       fs = require('fs'),
       path = require('path'),
       qs = require('querystring'),
