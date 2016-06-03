@@ -21,8 +21,7 @@
   "dependencies": {
     "express": "^4.13.4",
     "http2": "^3.3.4",
-    "nodemailer": "^2.4.2",
-    "nodemailer-smtp-transport": "^2.5.0"
+    "nodemailer": "^2.4.2"
   },
   "devDependencies": {
     "browser-sync-logger": "^1.0.3"
