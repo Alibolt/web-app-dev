@@ -118,4 +118,4 @@
             $('html').removeClass('search');
         });
     });
-}(angular.module('webapps', ['ngAnimate']));
+}(angular.module('webapps', ['ngAnimate', 'ngSanitize']));

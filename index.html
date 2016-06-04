@@ -122,7 +122,7 @@
                                 </h4>
                             </div>
                             <div class="panel-collapse collapse" id="{{simplify(question)}}">
-                                <p class="text-justify" ng-repeat="answer in answerList">{{answer}}</p>
+                                <p class="text-justify" ng-repeat="answer in answerList" ng-bind-html="answer"></p>
                             </div>
                         </div>
                     </div>
@@ -187,6 +187,7 @@
     <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="vendor/angular/angular.min.js"></script>
     <script src="vendor/angular-animate/angular-animate.min.js"></script>
+    <script src="vendor/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>
