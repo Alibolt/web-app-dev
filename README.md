@@ -20,25 +20,26 @@ the standard expected in open-source development.
 
 ## Requirements
 
-Students are expected to bring their own computers. All required tools will be acquired through guided installations as they
-are required in the course. Fluency in spoken and written English is a must.
+Students are encouraged to bring their own computers. There are a limited number of laptops available for using during class
+by the Don Mills Computer Centre, but you will still at least need a computer at home that you can use for working on assignments.
+All required tools will be acquired through guided installations as they are required in the course.
+
+**Fluency in spoken and written English is a must.**
 
 ## Work & Assignments
 
-The best practice for a working environment is a working environment. For this purpose, all students will be asked to find a
+The best practice for a working environment is a working environment. For this purpose, all students will be asked to think of a
 family member or friend who could benefit from a small web application. The only restrictions to this web application will be
 that it cannot be a static website, it must have some end-to-end features such as a live google maps implementation, a messenger,
 etc. Throughout this course, students will work little by little on the web applications for their clients, and hopefully use the
 lessons learned to improve the web applications.
 
-In the event that any student is unable to find a client, I have various small business contacts that I can connect students with
-and I can act as the contact as well.
-
 ## Schedule
 
-There will be two classes per week and each class will last about two hours. The first hour of this will be the lesson followed
-by an hour of working. For certain weeks, the first of two classes will be a programming class and the second will be a conceptual
-class. After this, all classes will be conceptual with programming mixed in.
+Class will occur every Tuesday and Thursday of July & August (16 classes total
+starting on July 5th). Each class will occur between 12 PM EST and 3 PM EST.
+The classes will be separated into a lesson, practical live coding example, and
+then some time to work on your own projects.
 
 The idea is to focus on the conceptual components of web application development as these are the most skipped over during
 tutorials and in school courses.
