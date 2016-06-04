@@ -37,7 +37,7 @@ lessons learned to improve the web applications.
 ## Schedule
 
 Class will occur every Tuesday and Thursday of July & August (16 classes total
-starting on July 5th). Each class will occur between 12 PM EST and 3 PM EST.
+starting on July 5th and lasting till August 30th). Each class will occur between 12 PM EST and 3 PM EST.
 The classes will be separated into a lesson, practical live coding example, and
 then some time to work on your own projects.
 
