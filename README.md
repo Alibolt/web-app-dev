@@ -46,36 +46,36 @@ tutorials and in school courses.
 
 Note: The following is a tentative list of the classes. This will most likely be under work and due for changes all throughout
 the course. Either in between other lessons, or towards the end, there will be some miscellaneous topics covered or catch-up
-classes. Under the title of each class, there is a short list of topics to be covered.
+classes (that's why only 15 lessons are planned). Under the title of each class, there is a short list of topics to be covered.
 
-1. Web Applications as Application Layers
+1. **Web Applications as Application Layers**
  - The features of an OS and where the app layer falls in; native apps vs. web apps; the composition of a web application;
  end-to-end solutions; server-client vs. P2P; learn about domains.
-2. HTTP & Getting Comfortable with the Command-Line
+2. **HTTP & Getting Comfortable with the Command-Line**
  - A crash course in HTTP; batch vs. bash; directory stack; commands; arguments, and flags; the command-line pipes. IDEs,
  HTML5 & CSS the components of an IDE (installing VSCode/Brackets); the composition of a web page; a crash course in HTML5;
  a crash course in CSS; intro to Bootstrap.
-3. Version Control Systems and the Development Environment
+3. **Version Control Systems and the Development Environment**
  - Version Control Systems and their importance in a working environment; git and Github (commits, releases, branches, collaborating); what is open source; open source best practices.
-4. Crash Course in JavaScript: Part 1
+4. **Crash Course in JavaScript: Part 1**
  - JavaScript as a language. (variables [var, let, const], variable types, control flow, functions); intro to JSLint.
-5. JavaScript and the Document-Object-Model
+5. **JavaScript and the Document-Object-Model**
  - The bridge between HTML and JS; DOM-manipulation and handling with JS; CSS selectors and a bit of jQuery.
-6. Asynchronous JavaScript And XML (AJAX)
+6. **Asynchronous JavaScript And XML (AJAX)**
  - The importance of non-blocking code (callbacks + promises), async forms, async content loading, async navigation.
-7. Crash Course in JavaScript: Part 2
+7. **Crash Course in JavaScript: Part 2**
  - Objects, arrays, classes (ES5+ES6), extensibility.
-8. The Model-View-Controller Way
+8. **The Model-View-Controller Way**
  - A guide to MVC and angular.js (1.x). Creating simple apps/forms with angular.
-10. Business Logic & Package Managers
+10. **Business Logic & Package Managers**
  - An introduction to node (event I/O, fs, modules, etc.) and the npm ecosystem. Frameworks vs. libraries.
-11. Databases & Build Systems
+11. **Databases & Build Systems**
  - SQL vs. NoSql databases, CRUD, injection, saving passwords. + make/npm as build systems.
-12. Developing RESTful APIs
+12. **Developing RESTful APIs**
  - RESTful design of APIs over HTTP/HTTPS; basic vs. digest authentication; CRUD over REST; ajax with REST.
-13. A Guide to Successful Debugging
+13. **A Guide to Successful Debugging**
  - An approach to debugging; do’s and do not’s.
-14. An Exhaustive Guide to Exhaustive Testing
+14. **An Exhaustive Guide to Exhaustive Testing**
  - Determining application flow, deciding on a unit testing framework, deciding on an assertion library, writing exhaustive tests.
-15. Continuous Integration & Deployment
+15. **Continuous Integration & Deployment**
  - The bridge between deployment and testing; localized testing.
