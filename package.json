@@ -1,0 +1,22 @@
+{
+  "name": "web-app-dev",
+  "version": "1.0.0",
+  "description": "npm run scripts for web-app-dev course",
+  "main": "README.md",
+  "scripts": {
+    "start": "node_modules/.bin/reveal-md --disableAutoOpen --port 8080 --highlightTheme zenburn --theme sky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karimsa/web-app-dev.git"
+  },
+  "author": "Karim Alibhai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/karimsa/web-app-dev/issues"
+  },
+  "homepage": "https://github.com/karimsa/web-app-dev#readme",
+  "dependencies": {
+    "reveal-md": "0.0.26"
+  }
+}
