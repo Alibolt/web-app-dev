@@ -1,7 +1,6 @@
 /**
- * scripts/fragmentize.js - web-apps
- * Force all `li` to become fragments.
- * Copyright (C) 2016 Karim Alibhai.
+ * Force fragmentizes all <li> elements to become
+ * reveal.js fragments.
  */
 
 ~ function ( Reveal ) {
