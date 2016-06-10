@@ -1,3 +1,5 @@
 {
-    "controls": false
+    "controls": false,
+    "postMessage": true,
+    "postMessageEvents": true
 }

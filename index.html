@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Speaker View</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body, .left, .right {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            overflow: hidden;
+        }
+
+        .frame.tmp {
+            background: #000;
+
+            width: 50px;
+            height: 50px;
+        }
+
+        .left {
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            width: 64%;
+
+            padding: 6px 0.5%;
+            display: table;
+        }
+
+        .left > .wrapper,
+        .right > .wrapper {
+            display: table-cell;
+            vertical-align: middle;
+            
+            height: 100%;
+            width: 100%;
+        }
+
+        .left > .wrapper > .frame {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .right {
+            position: absolute;
+
+            right: 0;
+            top: 0;
+
+            width: 35%;
+            padding: 0.5% 0;
+        }
+
+        .right > .preview, .right > .controls {
+            padding-right: 6px;
+        }
+
+        .preview {
+            height: 35%;
+        }
+
+        .preview > .frame {
+            height: 100%;
+            width: 100%;
+        }
+
+        .controls {
+            height: 65%;
+            padding-top: 6px;
+        }
+
+        .frame {
+            width: 100%;
+            height: 100%;
+        }
+
+        .segment .display {
+            border-bottom: 1px solid rgba(200,200,200,0.5);
+            padding-bottom: 10px;
+        }
+
+        .segment .label {
+            text-transform: uppercase;
+            font-weight: normal;
+            font-size: 0.7em;
+            color: #666;
+        }
+
+        .segment .value {
+            width: 50%;
+            font-size: 1.9em;
+        }
+
+        .segment .value .dim {
+            color: #bbb;
+        }
+
+        .segment .value {
+            margin-top: 5px;
+        }
+
+        .value.time { float: left; cursor: pointer; }
+        .value.clock { float: right; text-align: right; }
+
+        .segment .notes {
+            padding: 16px;
+            text-align: justify;
+            overflow-y: scroll;
+        }
+
+        .segment .notes p {
+            font-size: 1.3em;
+            white-space: pre-wrap;
+            line-height: 1.5;
+        }
+        
+        .clearfix { clear: both; }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <div class="wrapper">
+            <iframe src="%s" frameborder="0" class="frame" id="main"></iframe>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="preview">
+            <iframe src="%s" frameborder="0" class="frame" id="next"></iframe>
+        </div>
+        <div class="controls">
+            <div class="segment">
+                <span class="label">TIME</span>
+                <div class="display">
+                    <p class="value time" title="Click to reset."><span class="dim">00:</span><span class="dim">00:</span>23</p>
+                    <p class="value clock">3:05 <span class="dim">PM</span></p>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="notes"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <script>
+        ~ function () {
+            'use strict';
+
+            //////////////////////////////////////////
+            // update clock and timer
+            //////////////////////////////////////////
+
+            var time = document.getElementsByClassName('time')[0];
+            var clock = document.getElementsByClassName('clock')[0];
+            var start = +new Date;
+            var update = function () {
+                requestAnimationFrame( update );
+
+                var now = new Date();
+
+                var hours = now.getHours();
+                var mins = now.getMinutes();
+                var tod = 'AM';
+
+                // we don't want military time, instead
+                // use the dimmed AM/PM display
+                if (hours > 12) {
+                    hours -= 12;
+                    tod = 'PM';
+                }
+
+                // append '0' for single-digit minutes
+                // for prettiness
+                if (mins < 10) {
+                    mins = '0' + mins;
+                }
+
+                // update clock
+                clock.innerHTML = hours + ':' + mins + ' <span class="dim">' + tod + '</span>';
+
+                // calculate components of elapsed
+                var elapsed = (now - start) / 1000;
+
+                hours = Math.floor( elapsed / 3600 );
+                elapsed -= 3600 * hours;
+
+                mins = Math.floor( elapsed / 60 );
+                elapsed -= 60 * mins;
+
+                time.innerHTML = [hours, mins, Math.floor(elapsed)].map(function (time) {
+                    if (time < 10) {
+                        return '0' + time;
+                    }
+
+                    return time;
+                }).map(function (time) {
+                    if (time === '00') return '<span class="dim">' + time + '</span>';
+                    return time;
+                }).join('<span class="dim">:</span>');
+            };
+
+            time.addEventListener('click', function () {
+                start = +new Date;
+            });
+
+            update();
+
+            //////////////////////////////////////////
+            // now handle slide preview and notes
+            //////////////////////////////////////////
+
+            var main = document.getElementById('main');
+            var next = document.getElementById('next');
+            var notes = document.getElementsByClassName('notes')[0];
+
+            // force focus onto main iframe
+            main.focus();
+            main.addEventListener('blur', function () {
+                main.focus();
+            });
+
+            // proxy states between the preview and main frame
+            window.addEventListener('message', function (message) {
+                if (message.source !== main.contentWindow) return;
+                var data = JSON.parse(message.data);
+
+                if (data.namespace === 'reveal' && 'state' in data) {
+                    next.contentWindow.postMessage(JSON.stringify({
+                        method: 'setState',
+                        args: [ data.state ]
+                    }), '*');
+
+                    next.contentWindow.postMessage(JSON.stringify({
+                        method: 'next',
+                        args: []
+                    }), '*');
+
+                    main.contentWindow.postMessage('{"method":"getSlideNotes","args":[]', '*');
+                } else if ('notes' in data) {
+                    notes.innerHTML = data.notes.map(function (p) {
+                        return '<p>' + p + '</p>';
+                    }).join('<br>');
+                } else console.warn(data);
+            });
+        }();
+    </script>
+</body>
+</html>
