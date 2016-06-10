@@ -2,9 +2,9 @@
   "name": "web-app-dev",
   "version": "1.0.0",
   "description": "npm run scripts for web-app-dev course",
-  "main": "README.md",
+  "main": "serve.js",
   "scripts": {
-    "start": "./start.sh"
+    "start": "node serve.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/karimsa/web-app-dev#readme",
   "dependencies": {
+    "next-port": "0.0.8",
+    "open": "0.0.5",
     "reveal-md": "git+https://github.com/karimsa/reveal-md.git#master"
   }
 }
