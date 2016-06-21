@@ -206,10 +206,10 @@
                     }
 
                     return time;
-                }).map(function (time) {
-                    if (time === '00') return '<span class="dim">' + time + '</span>';
-                    return time;
-                }).join('<span class="dim">:</span>');
+                }).map(function (time, index) {
+                    if (time === '00') return '<span class="dim">' + time + (index !== 2 ? ':' : '') + '</span>';
+                    return time + (index !== 2 ? ':' : '');
+                }).join('');
             };
 
             time.addEventListener('click', function () {
@@ -225,6 +225,23 @@
             var main = document.getElementById('main');
             var next = document.getElementById('next');
             var notes = document.getElementsByClassName('notes')[0];
+            var nextState;
+            var deepEqual = function (objectA, objectB) {
+                if (objectA instanceof Array) {
+                    return objectA.sort().join() === objectB.sort().join();
+                }
+
+                var keysA = Object.keys(objectA);
+
+                if (keysA.length !== Object.keys(objectB).length) return false;
+
+                for (var i = 0; i < keysA.length; i += 1) {
+                    if ( typeof objectA[keysA[i]] === 'object' && !deepEqual(objectA[keysA[i]], objectB[keysA[i]])) return false;
+                    else if (objectA[keysA[i]] === objectB[keysA[i]]) return false;
+                }
+
+                return true;
+            };
 
             // force focus onto main iframe
             main.focus();
@@ -234,14 +251,26 @@
 
             // proxy states between the preview and main frame
             window.addEventListener('message', function (message) {
-                if (message.source !== main.contentWindow) return;
                 var data = JSON.parse(message.data);
 
-                if (data.namespace === 'reveal' && 'state' in data) {
+                if (message.source !== main.contentWindow) {
+                    if (data.namespace === 'reveal' && 'state' in data) {
+                        nextState = data.state;
+                    }
+
+                    return;
+                }
+
+                if (data.namespace === 'reveal' && 'state' in data && !deepEqual(nextState, data.state)) {
                     next.contentWindow.postMessage(JSON.stringify({
                         method: 'setState',
                         args: [ data.state ]
                     }), '*');
+
+                    let xhr = new XMLHttpRequest();
+                    xhr.open('post', '/state', true);
+                    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+                    xhr.send(JSON.stringify(data.state));
 
                     next.contentWindow.postMessage(JSON.stringify({
                         method: 'next',
