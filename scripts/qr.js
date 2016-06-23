@@ -8,6 +8,7 @@
 
     // use a PNG in an <img> element
     var elm = new Image();
+    elm.id = 'qr-code';
     elm.src = 'https://api.qrserver.com/v1/create-qr-code/?size=500x500&format=png&data=' + encodeURIComponent(location.href);
 
     // add event listener to update image
