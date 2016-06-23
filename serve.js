@@ -5,7 +5,10 @@ const express = require('express'),
       fs = require('fs'),
       path = require('path'),
       url = require('url'),
-      http = require('http').createServer(app),
+      http = require('https').createServer({
+          cert: fs.readFileSync(path.resolve(__dirname, 'ssl', 'server.crt')),
+          key: fs.readFileSync(path.resolve(__dirname, 'ssl', 'server.key'))
+      }, app),
       exec = require('child_process').exec,
       util = require('util'),
       nextPort = require('next-port'),
@@ -21,6 +24,12 @@ var child = exec(`node_modules/.bin/reveal-md ./classes/${process.argv[2]}.md --
 }).stdout.on('data', function (data) {
     let port;
     let stateRequests = [];
+
+    app.use('/proxy', proxy('localhost:8080', {
+        forwardPath: function (req) {
+            return url.parse(req.url).path;
+        }
+    }));
 
     app.get('/state', function (req, res) {
         res.set('Transfer-Encoding', 'chunked');

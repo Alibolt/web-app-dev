@@ -132,13 +132,13 @@
 <body>
     <div class="left">
         <div class="wrapper">
-            <iframe src="%s" frameborder="0" class="frame" id="main"></iframe>
+            <iframe src="/proxy/%s.md" frameborder="0" class="frame" id="main"></iframe>
         </div>
     </div>
 
     <div class="right">
         <div class="preview">
-            <iframe src="%s" frameborder="0" class="frame" id="next"></iframe>
+            <iframe src="/proxy/%s.md" frameborder="0" class="frame" id="next"></iframe>
         </div>
         <div class="controls">
             <div class="segment">
@@ -261,13 +261,13 @@
                     return;
                 }
 
-                if (data.namespace === 'reveal' && 'state' in data && !deepEqual(nextState, data.state)) {
+                if (data.namespace === 'reveal' && 'state' in data && (!nextState || !deepEqual(nextState, data.state))) {
                     next.contentWindow.postMessage(JSON.stringify({
                         method: 'setState',
                         args: [ data.state ]
                     }), '*');
 
-                    let xhr = new XMLHttpRequest();
+                    var xhr = new XMLHttpRequest();
                     xhr.open('post', '/state', true);
                     xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
                     xhr.send(JSON.stringify(data.state));
@@ -278,6 +278,7 @@
                     }), '*');
 
                     main.contentWindow.postMessage('{"method":"getSlideNotes","args":[]', '*');
+                    nextState = data.state;
                 } else if ('notes' in data) {
                     notes.innerHTML = data.notes.map(function (p) {
                         return '<p>' + p + '</p>';

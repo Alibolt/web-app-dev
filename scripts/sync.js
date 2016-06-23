@@ -34,7 +34,7 @@
         xhr.onerror = function () { fetch(resolve) };
         xhr.onprogress = parseNext;
 
-        xhr.open('get', 'http://' + location.host.split(':')[0] + ':1024/state', true);
+        xhr.open('get', 'https://' + location.host.split(':')[0] + ':1024/state', true);
         xhr.send();
     };
 
