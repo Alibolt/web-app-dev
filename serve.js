@@ -2,30 +2,33 @@
 
 const express = require('express'),
       app = express(),
-      http = require('http').Server(app),
-      exec = require('child_process').exec,
-      util = require('util'),
       fs = require('fs'),
       path = require('path'),
+      url = require('url'),
+      http = require('http').createServer(app),
+      exec = require('child_process').exec,
+      util = require('util'),
       nextPort = require('next-port'),
       open = require('open'),
       ip = require('my-ip'),
       bodyParser = require('body-parser'),
-      basicAuth = require('basic-auth');
+      basicAuth = require('basic-auth'),
+      proxy = require('express-http-proxy');
 
 var child = exec(`node_modules/.bin/reveal-md ./classes/${process.argv[2]}.md --disableAutoOpen --scripts scripts/fragmentize.js,scripts/qr.js,scripts/notes.js,scripts/sync.js --port 8080 --highlightTheme zenburn --theme sky`, function (err, stderr) {
     console.log(err);
     console.log(stderr);
 }).stdout.on('data', function (data) {
     let port;
-    let state = '{}';
-    let hung = [];
+    let stateRequests = [];
 
     app.get('/state', function (req, res) {
-        res.header('Access-Control-Allow-Origin', '*');
-        res.header('Access-Control-Allow-Methods', 'GET');
-
-        hung.push(res);
+        res.set('Transfer-Encoding', 'chunked');
+        res.set('Access-Control-Allow-Origin', '*');
+        res.set('Access-Control-Allow-Methods', 'GET');
+        
+        console.log('* Received request for state');
+        stateRequests.push(res);
     });
 
     app.use(function (req, res, next) {
@@ -38,12 +41,14 @@ var child = exec(`node_modules/.bin/reveal-md ./classes/${process.argv[2]}.md --
     });
 
     app.post('/state', bodyParser.json(), function (req, res) {
-        state = req.body;
+        console.log(req.body);
+        console.log('* Updated state for %s requests', stateRequests.length);
 
-        hung.map((resp) => resp.end( JSON.stringify(state) ));
-        hung = [];
+        stateRequests.forEach((_res) => {
+            _res.write( JSON.stringify(req.body) + '\0' );
+        });
 
-        // respond to avoid hanging the XHR
+        // avoid hanging the XHRs
         res.end('Thanks.');
     });
 
@@ -51,7 +56,7 @@ var child = exec(`node_modules/.bin/reveal-md ./classes/${process.argv[2]}.md --
         const url = req.url === '/' ? '/index.html' : req.url;
 
         if (url === '/index.html') {
-            res.end(util.format(fs.readFileSync(path.resolve(__dirname, 'index.html'), 'utf8'), `http://${ip()}:8080/${process.argv[2]}.md`, `http://${ip()}:8080/${process.argv[2]}.md`));
+            res.end(util.format(fs.readFileSync(path.resolve(__dirname, 'index.html'), 'utf8'), process.argv[2], process.argv[2]));
         } else {
             res.sendFile(path.resolve(__dirname, '.' + url));
         }
