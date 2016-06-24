@@ -4,7 +4,8 @@
   "description": "npm run scripts for web-app-dev course",
   "main": "serve.js",
   "scripts": {
-    "start": "node serve.js"
+    "start": "node serve.js",
+    "precommit": "node print.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,10 @@
     "my-ip": "^1.1.1",
     "next-port": "0.0.8",
     "open": "0.0.5",
+    "precommit": "^1.2.0",
     "reveal-md": "^0.0.28"
+  },
+  "devDependencies": {
+    "nightmare": "^2.5.2"
   }
 }
