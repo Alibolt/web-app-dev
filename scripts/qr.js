@@ -17,12 +17,15 @@
     });
 
     // configure styles
-    elm.style.width = '10%';
-    elm.style.height = 'auto';
-
-    elm.style.position = 'fixed';
-    elm.style.right = '10px';
-    elm.style.bottom = '10px';
+    window.style.attach(
+        (new Rule())
+            .width('10%')
+            .height('auto')
+            .position('fixed')
+            .right('10px')
+            .bottom('10px')
+            .apply('#qr-code')
+    );
 
     // inject into body
     document.body.appendChild( elm );
