@@ -9,7 +9,8 @@
     "print": "node print.js"
   },
   "precommit": [
-    "npm run print"
+    "npm run print",
+    "git add -A -v classes/pdfs"
   ],
   "repository": {
     "type": "git",
