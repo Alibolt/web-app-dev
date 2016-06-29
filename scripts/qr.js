@@ -17,15 +17,15 @@
     });
 
     // configure styles
-    window.style.attach(
-        (new Rule())
-            .width('10%')
-            .height('auto')
-            .position('fixed')
-            .right('10px')
-            .bottom('10px')
-            .apply('#qr-code')
-    );
+    style({
+        '#qr-code': {
+            width: '10%',
+            height: 'auto',
+            position: 'fixed',
+            right: '10px',
+            bottom: '10px'
+        }
+    });
 
     // inject into body
     document.body.appendChild( elm );

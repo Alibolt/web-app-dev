@@ -1,9 +1,35 @@
 /**
  * Style hacks for the presentations.
- * Uses Swirl (https://github.com/karimsa/swirl).
  */
 
-window.style=(function(s,w,i,r,l){'use strict';w=new Style;w.tag.parentElement.removeChild(w.tag),document.body.appendChild(w.tag);for(i in s)if(s.hasOwnProperty(i)){w.attach(r=(new Rule).apply(i));console.log(`creating rule for ${i}`);for(l in s[i])s[i].hasOwnProperty(l)&&r[l](s[i][l])};return w}({
+window.style = (function (styles) {
+    'use strict';
+
+    var tag = document.createElement( 'style' );
+
+    tag.setAttribute( 'id', 'styles' );
+    tag.setAttribute( 'type', 'text/css' );
+    tag.innerHTML = '';
+
+    document.body.appendChild( tag );
+    return function ( styles ) {
+        var selector, property;
+
+        for ( selector in styles ) {
+            if ( styles.hasOwnProperty( selector ) ) {
+                tag.innerHTML += selector + '{';
+                for ( property in styles[selector] ) {
+                    if ( styles[selector].hasOwnProperty( property ) ) {
+                        tag.innerHTML += property + ':' + styles[selector][property];
+                    }
+                }
+                tag.innerHTML += '}';
+            }
+        }
+    };
+}());
+
+style({
     '.pull-right': {
         float: 'right'
     },
@@ -19,4 +45,4 @@ window.style=(function(s,w,i,r,l){'use strict';w=new Style;w.tag.parentElement.r
     '.padded-bottom': {
         'marginBottom': '50px'
     }
-}));
+});
