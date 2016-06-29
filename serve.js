@@ -18,7 +18,7 @@ const express = require('express'),
       basicAuth = require('basic-auth'),
       proxy = require('express-http-proxy');
 
-var child = exec(`node_modules/.bin/reveal-md ./classes/${process.argv[2]}.md --disableAutoOpen --scripts scripts/swirl.js,scripts/styles.js,scripts/fragmentize.js,scripts/qr.js,scripts/notes.js,scripts/sync.js --port 8080 --highlightTheme zenburn --theme sky`, function (err, stderr) {
+var child = exec(`node_modules/.bin/reveal-md ./classes/${process.argv[2]}.md --disableAutoOpen --scripts scripts/swirl.js,scripts/styles.js,scripts/fragmentize.js,scripts/qr.js,scripts/notes.js,scripts/sync.js --port 8080 --highlightTheme zenburn --theme blood`, function (err, stderr) {
     console.log(err);
     console.log(stderr);
 }).stdout.on('data', function (data) {
