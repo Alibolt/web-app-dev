@@ -44,5 +44,16 @@ style({
     
     '.padded-bottom': {
         'marginBottom': '50px'
+    },
+
+    '.reveal code': {
+        'padding': '7px 10px',
+        'margin': '0 5px',
+        'font-size': '.8em',
+        'background': '#000',
+
+        '-webkit-border-radius': '10px',
+        '-moz-border-radius': '10px',
+        'border-radius': '10px'
     }
 });
