@@ -20,7 +20,7 @@ window.style = (function (styles) {
                 tag.innerHTML += selector + '{';
                 for ( property in styles[selector] ) {
                     if ( styles[selector].hasOwnProperty( property ) ) {
-                        tag.innerHTML += property + ':' + styles[selector][property];
+                        tag.innerHTML += property + ':' + styles[selector][property] + ';';
                     }
                 }
                 tag.innerHTML += '}';
