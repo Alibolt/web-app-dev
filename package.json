@@ -5,7 +5,8 @@
   "main": "serve.js",
   "scripts": {
     "start": "node serve.js",
-    "precommit": "node print.js"
+    "print": "node print.js",
+    "precommit": "npm run print"
   },
   "repository": {
     "type": "git",
