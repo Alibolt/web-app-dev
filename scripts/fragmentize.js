@@ -10,5 +10,10 @@
                 li.classList.add('fragment');
             }
         });
+
+        // allows proper printing
+        [].slice.call(document.getElementsByClassName('fragmentize')).forEach(function (elm) {
+            elm.classList.add('fragment');
+        });
     });
 }( window.Reveal || document.creatElement('div') );
