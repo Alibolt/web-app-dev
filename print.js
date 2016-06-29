@@ -4,11 +4,13 @@ const exec = require('child_process').exec;
 const Nightmare = require('nightmare');
 
 console.log('* Starting server ...');
-const child = exec(`npm start intro`, {
+const child = exec(`node serve intro`, {
     cwd: __dirname
 }, function (err) {
-    if (err) console.log(err.stack || err);
-}).stdout.on('data', chunk => {
+    if (err && !err.killed) console.log(err.stack || err);
+});
+
+child.stdout.on('data', chunk => {
     if ( chunk.indexOf('LISTEN') !== -1 ) {
         const todo = [];
 
