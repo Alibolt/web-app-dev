@@ -38,9 +38,22 @@
         xhr.send();
     };
 
+    // add styling for later
+    document.getElementById('styles').innerHTML += '@-webkit-keyframes spinAndGrow{100%{-webkit-transform:rotate(360deg) scale(1)}50%{-webkit-transform:rotate(180deg) scale(1.5)}}@-moz-keyframes spinAndGrow{100%{-moz-transform:rotate(360deg) scale(1)}50%{-moz-transform:rotate(180deg) scale(1.5)}}@keyframes spinAndGrow{100%{-webkit-transform:rotate(360deg) scale(1);transform:rotate(360deg) scale(1)}50%{-webkit-transform:rotate(180deg) scale(1.5);transform:rotate(180deg) scale(1.5)}}';
+    style({
+        '.syncd': {
+            '-webkit-animation': 'spinAndGrow 1s linear 1',
+            '-moz-animation': 'spinAndGrow 1s linear 1',
+            'animation': 'spinAndGrow 1s linear 1'
+        }
+    });
+
     // do a long poll for the state. upon resolution,
     // update Reveal then go again
-    window.sync = function () { fetch(function (state) { Reveal.setState( state ) }) };
+    window.sync = function () {
+        qr.classList.add( 'syncd' );
+        fetch(function (state) { Reveal.setState( state ) });
+    };
 
     // attach to QR code
     var qr = document.getElementById( 'qr-code' );
