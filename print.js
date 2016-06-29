@@ -4,7 +4,7 @@ const exec = require('child_process').exec;
 const Nightmare = require('nightmare');
 
 console.log('* Starting server ...');
-const child = exec(`node serve intro`, {
+const child = exec(`node serve`, {
     cwd: __dirname
 }, function (err) {
     if (err && !err.killed) console.log(err.stack || err);
