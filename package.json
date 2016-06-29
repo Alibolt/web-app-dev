@@ -5,9 +5,11 @@
   "main": "serve.js",
   "scripts": {
     "start": "node serve.js",
-    "print": "node print.js",
-    "precommit": "npm run print"
+    "print": "node print.js"
   },
+  "precommit": [
+    "npm run print"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/karimsa/web-app-dev.git"
