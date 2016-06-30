@@ -41,10 +41,6 @@ style({
     '.clearfix': {
         clear: 'both'
     },
-    
-    '.padded-bottom': {
-        'marginBottom': '50px'
-    },
 
     '.reveal code': {
         'padding': '7px 10px',
