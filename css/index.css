@@ -234,6 +234,10 @@ body > div:not(:first-child) { padding-top: 50px; }
     transition: opacity .3s ease;
 }
 
+.bold {
+  font-weight: 800;
+}
+
 footer {
     width: 100%;
     border-top: solid 1px rgba(0,0,0,.1);
