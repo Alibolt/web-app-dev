@@ -1,0 +1,36 @@
+{
+  "what will this course cover": [
+    "This course is designed to act as a thorough crash course in all things related to web app development. In it, you will learn the appropriate approach to designing and developing web applications.",
+    "A full syllabus can be found <a href='https://github.com/karimsa/web-app-dev'>here</a>."
+  ],
+  "who is this course intended for": [
+    "This course is aimed towards youth from the ages of 15 to 25 who want to add the tool of web application development to their skillset. It is not limited to those people who are in a computer science or engineering career path. In fact, I have found that there are many students in many diverse disciplines including health science who wish to learn web application development to create a bridge between computer science and their individual disciplines. This allows for many interesting applications to be created such as electronic medical record managers, intelligent financial analytics tools, and much more."
+  ],
+  "do I need to have a technical background to attend": [
+    "Due to the breadth of the course material, students will be given optional readings and practice assignments for their own time outside of class. Those with a technical background will certainly find the material easier to keep up with, but the first few lessons have been designed to cater to students from all levels of experience (from none to much experience).",
+    "There is also a wonderful team of Teaching Assistants that will be around to answer questions and help students out during classes. The entire teaching team will also be available after classes via email for extra help if students need it."
+  ],
+  "what is the timeline of the course": [
+    "Classes will start on July 12th and end on August 30th (every Tuesday and Thursday). Each class will run from 12 PM to 3 PM. If you arrive late or miss a class, you can catch up from the course material posted online or ask a TA after class."
+  ],
+  "where will the classes take place": [
+    "The classes will take place at the Don Mills Computer Centre located at Don Mills jamatkhana:",
+    "80 Overlea Boulevard<br>Toronto, ON.<br>M4H 1C5"
+  ],
+  "how much does the course cost": [
+    "The fee of the cost will be $20 per student to cover internal costs."
+  ],
+  "what do I need to bring to each class": [
+    "Since it is a programming class, you will need a <span class='bold' title='Tablets and iPads will not be acceptable.'>computer</span> (please do not bring a tablet or an ipad) during class time. If you are unable to bring a laptop to class, please let us know during registration so we can make appropriate arrangments. However, please be aware that there are a limited number of laptops available.",
+    "If you are bringing your own laptop, please ensure that your device is charged properly as there are also a limited number of charging ports available in class."
+  ],
+  "what are the benefits from taking this class": [
+    "This class will teach you the skills you need to know to enter the professional universe of web development. It is our hopes that after this course, you will be prepared to work on your own open-source projects or work alongside developers at web development jobs."
+  ],
+  "can my non-Ismaili friend join": [
+    "Unfortunately, this class is limited to Ismailies-only since it is an event powered by the Don Mills Computer Resource Centre."
+  ],
+  "is there any way to take the course online": [
+    "We are still trying to work out a way for people to watch a webcast online. But either way, all course content and materials are available online at <a href='https://github.com/karimsa/web-app-dev'>the official github page</a>. I will be sending out instructions on how to use these resources during the first week of class. You can sign up for this mailing list by emailing me at <a href='karim@alibhai.co'>karim@alibhai.co</a>."
+  ]
+}
