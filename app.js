@@ -1,8 +1,6 @@
 'use strict';
 
-const express = require('express'),
-      app = express(),
-      redirect = express(),
+const redirect = require('express')(),
       transport = require('nodemailer').createTransport(`smtps://karim%40alibhai.co:${process.env.MAILPASS}@smtp.gmail.com`),
       fs = require('fs'),
       path = require('path'),
@@ -12,6 +10,11 @@ const express = require('express'),
           cert: fs.readFileSync(path.resolve(__dirname, 'ssl', '1_web-apps.co_bundle.crt'), 'utf8'),
           ca: fs.readFileSync(path.resolve(__dirname, 'ssl', 'ca.pem'), 'utf8')
       }, function (req, res) {
+          if ( req.headers.host.split(':')[0].substr(0, 3) === 'www' ) {
+              res.redirect(301, `https://web-apps.co${req.url}`);
+              return;
+          }
+
           const url = require('url').parse(req.url);
           let file = url.pathname;
           file = file === '/' ? '/index.html' : file;
