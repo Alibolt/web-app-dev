@@ -24,6 +24,7 @@
              $('.collapse').collapse({ toggle: false }).on('click', function () { $('.collapse.in').collapse() });
              $('.panel-title a').on('click', function () { $(this).blur() });
              if (window.screen.width > 610) $('[data-toggle="tooltip"]').tooltip();
+             $('span.bold').tooltip();
          })
          .fail(function (err) { console.error(err) });
 
@@ -62,6 +63,7 @@
             $('.collapse').collapse({ toggle: false }).on('click', function () { $('.collapse.in').collapse() });
             $('.panel-title a').on('click', function () { $(this).blur() });
             if (window.screen.width > 610) $('[data-toggle="tooltip"]').tooltip();
+            $('span.bold').tooltip();
         };
 
         $scope.simplify = function (question) {
