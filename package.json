@@ -8,10 +8,6 @@
     "start": "node serve.js",
     "print": "node print.js"
   },
-  "precommit": [
-    "npm run print",
-    "git add -A -v classes/pdfs"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/karimsa/web-app-dev.git"
@@ -29,7 +25,6 @@
     "my-ip": "^1.1.1",
     "next-port": "0.0.8",
     "open": "0.0.5",
-    "precommit": "^1.2.0",
     "reveal-md": "^0.0.28"
   },
   "devDependencies": {
