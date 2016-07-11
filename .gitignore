@@ -1,3 +1,5 @@
 node_modules
 *.log
 *.unpublished
+.DS_Store
+._*
