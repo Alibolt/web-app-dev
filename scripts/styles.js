@@ -51,5 +51,11 @@ style({
         '-webkit-border-radius': '10px',
         '-moz-border-radius': '10px',
         'border-radius': '10px'
+    },
+    
+    '.reveal h1 > a': {
+        'text-shadow': 'none',
+        'padding-bottom': '20px',
+        'border-bottom': 'dotted 10px'
     }
 });
