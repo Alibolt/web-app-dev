@@ -7,6 +7,14 @@ various lessons and lesson-related materials. You can download and view these at
 there is no guarantee that these will remain the same materials when they are used but I do promise to
 push all changes as I make them.
 
+## Table of Contents
+
+ - [Intended Audience](##Intended Audience)
+ - [Outcome](##Outcome)
+ - [Requirements](##Requirements)
+ - [Work & Assignments](##Work & Assignments)
+ - [Schedule](##Schedule)
+
 ## Intended Audience
 
 This course is aimed at young students (between the ages of 16 and 25) hoping to enhance their portfolios by adding the
@@ -48,34 +56,40 @@ Note: The following is a tentative list of the classes. This will most likely be
 the course. Either in between other lessons, or towards the end, there will be some miscellaneous topics covered or catch-up
 classes (that's why only 15 lessons are planned). Under the title of each class, there is a short list of topics to be covered.
 
-1. **Web Applications as Application Layers**
- - The features of an OS and where the app layer falls in; native apps vs. web apps; the composition of a web application;
- end-to-end solutions; server-client vs. P2P; learn about domains.
-2. **HTTP & Getting Comfortable with the Command-Line**
- - A crash course in HTTP; batch vs. bash; directory stack; commands; arguments, and flags; the command-line pipes. IDEs,
-   the components of an IDE (installing VSCode/Brackets).
-3. **Version Control Systems and the Development Environment**
- - Version Control Systems and their importance in a working environment; git and Github (commits, releases, branches, collaborating); what is open source; open source best practices.
-4. **HTML5 & CSS**
- - Learning HTML5, the skeleton of the web page &amp; CSS the markup that styles everything. the composition of a web page; a crash course in HTML5;
-   a crash course in CSS; intro to Bootstrap.
-5. **Crash Course in JavaScript: Part 1**
- - JavaScript as a language. (variables [var, let, const], variable types, control flow, functions); intro to JSLint.
-6. **JavaScript and the Document-Object-Model**
- - The bridge between HTML and JS; DOM-manipulation and handling with JS; CSS selectors and a bit of jQuery.
-7. **Asynchronous JavaScript And XML (AJAX)**
- - The importance of non-blocking code (callbacks + promises), async forms, async content loading, async navigation.
-8. **Crash Course in JavaScript: Part 2**
- - Objects, arrays, classes (ES5+ES6), extensibility.
-9. **The Model-View-Controller Way**
- - A guide to MVC and angular.js (1.x). Creating simple apps/forms with angular.
-10. **Business Logic & Package Managers**
- - An introduction to node (event I/O, fs, modules, etc.) and the npm ecosystem. Frameworks vs. libraries.
-11. **An Exhaustive Guide to Exhaustive Testing (& Continuous Integration)**
- - Determining application flow, deciding on a unit testing framework, deciding on an assertion library, writing exhaustive tests.
-   The bridge between deployment and testing; localized testing.
-12. **Playing with Our Projects**
- - A day to play with everyone's web apps.
+ 1. **Day #1**
+  - `Introductions`: introduce the course and ourselves.
+  - `The Insides of the Computer`: learning the fundamental components that make up a computer.
+  - `What on Earth is a web app?`: positioning the web app within the computer and what it consists of.
+ 2. **Day #2**
+  - `How Web Servers Chat`: an introduction and exploration of HTTP from the server and the client points of view.
+  - `The Black Screen with the Green Text`: administrating and manipulating computers through terminals.
+ 3. **Day #3**
+  - `The Many Lives of your App`: version control systems and their importance in all projects.
+  - `The Space where you Code`: development environments and preparing your tools.
+ 4. **Day #4**
+  - `The Skeleton of the Web Page`: crash course in HTML5.
+  - `Prettifying the Web`: learning CSS3 and Bootstrap.
+ 5. **Day #5**
+  - `Bringing the Web to Life`: crashing through JavaScript, part 1.
+  - `The Good &amp; The Bad`: learning to differentiate the good parts from the bad and linting your code.
+ 6. **Day #6**
+  - `The Bridge between Worlds`: the Document-Object-Model and its importance in a web app.
+  - `Nobody Writes JavaScript Anymore`: an intro and roast of jQuery.
+ 7. **Day #7**
+  - `More Advanced Forms of Life`: crashing through JavaScript, part 2.
+ 8. **Day #8**
+  - `The Concept of Seamless`: asynchronous javascript: callbacks, promises, setTimeout, setInterval.
+  - `Fetching Content with JS`: XMLHttpRequests, lazy loading, and async forms.
+ 9. **Day #9**
+  - `Modeling Apps for User Interaction`: the MVC philosophy and angularjs.
+ 10. **Day #10**
+  - `The Omnipotent Backend`: an introduction to Node.js.
+  - `As United Modules We Stand`: the world of modular development and the npm ecosystem.
+ 11. **Day #11**
+  - `An Exhaustive Guide to Exhaustive Testing`: learning to effectively test your code.
+  - `The Stream of Publishing`: continuous integration and deployment.
+ 12. **Day #12**
+  - `Let's Play`: a day to play with all of our web apps.
 
 ### Optional Topics
 
@@ -83,6 +97,8 @@ There are two open spots in the schedule for optional topics from the following:
 
  - **Databases & Build Systems**
    - SQL vs. NoSql databases, CRUD, injection, saving passwords. + make/npm as build systems.
+ - **Asynchronous Navigation**
+   - ajax for content, nav transitions, the history API.
  - **Developing RESTful APIs**
    - RESTful design of APIs over HTTP/HTTPS; basic vs. digest authentication; CRUD over REST; ajax with REST.
  - **A Guide to Successful Debugging**
