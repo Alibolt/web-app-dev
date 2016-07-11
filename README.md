@@ -53,29 +53,39 @@ classes (that's why only 15 lessons are planned). Under the title of each class,
  end-to-end solutions; server-client vs. P2P; learn about domains.
 2. **HTTP & Getting Comfortable with the Command-Line**
  - A crash course in HTTP; batch vs. bash; directory stack; commands; arguments, and flags; the command-line pipes. IDEs,
- HTML5 & CSS the components of an IDE (installing VSCode/Brackets); the composition of a web page; a crash course in HTML5;
- a crash course in CSS; intro to Bootstrap.
+   the components of an IDE (installing VSCode/Brackets).
 3. **Version Control Systems and the Development Environment**
  - Version Control Systems and their importance in a working environment; git and Github (commits, releases, branches, collaborating); what is open source; open source best practices.
-4. **Crash Course in JavaScript: Part 1**
+4. **HTML5 & CSS**
+ - Learning HTML5, the skeleton of the web page &amp; CSS the markup that styles everything. the composition of a web page; a crash course in HTML5;
+   a crash course in CSS; intro to Bootstrap.
+5. **Crash Course in JavaScript: Part 1**
  - JavaScript as a language. (variables [var, let, const], variable types, control flow, functions); intro to JSLint.
-5. **JavaScript and the Document-Object-Model**
+6. **JavaScript and the Document-Object-Model**
  - The bridge between HTML and JS; DOM-manipulation and handling with JS; CSS selectors and a bit of jQuery.
-6. **Asynchronous JavaScript And XML (AJAX)**
+7. **Asynchronous JavaScript And XML (AJAX)**
  - The importance of non-blocking code (callbacks + promises), async forms, async content loading, async navigation.
-7. **Crash Course in JavaScript: Part 2**
+8. **Crash Course in JavaScript: Part 2**
  - Objects, arrays, classes (ES5+ES6), extensibility.
-8. **The Model-View-Controller Way**
+9. **The Model-View-Controller Way**
  - A guide to MVC and angular.js (1.x). Creating simple apps/forms with angular.
 10. **Business Logic & Package Managers**
  - An introduction to node (event I/O, fs, modules, etc.) and the npm ecosystem. Frameworks vs. libraries.
-11. **Databases & Build Systems**
- - SQL vs. NoSql databases, CRUD, injection, saving passwords. + make/npm as build systems.
-12. **Developing RESTful APIs**
- - RESTful design of APIs over HTTP/HTTPS; basic vs. digest authentication; CRUD over REST; ajax with REST.
-13. **A Guide to Successful Debugging**
- - An approach to debugging; do’s and do not’s.
-14. **An Exhaustive Guide to Exhaustive Testing**
+11. **An Exhaustive Guide to Exhaustive Testing (& Continuous Integration)**
  - Determining application flow, deciding on a unit testing framework, deciding on an assertion library, writing exhaustive tests.
-15. **Continuous Integration & Deployment**
- - The bridge between deployment and testing; localized testing.
+   The bridge between deployment and testing; localized testing.
+12. **Playing with Our Projects**
+ - A day to play with everyone's web apps.
+
+### Optional Topics
+
+There are two open spots in the schedule for optional topics from the following:
+
+ - **Databases & Build Systems**
+   - SQL vs. NoSql databases, CRUD, injection, saving passwords. + make/npm as build systems.
+ - **Developing RESTful APIs**
+   - RESTful design of APIs over HTTP/HTTPS; basic vs. digest authentication; CRUD over REST; ajax with REST.
+ - **A Guide to Successful Debugging**
+   - An approach to debugging; do’s and do not’s.
+
+There will be time to pitch topic ideas in case there is something you'd like us to focus on!
