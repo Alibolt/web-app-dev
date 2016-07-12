@@ -104,4 +104,4 @@ There are two open spots in the schedule for optional topics from the following:
  - **A Guide to Successful Debugging**
    - An approach to debugging; do’s and do not’s.
 
-There will be time to pitch topic ideas in case there is something you'd like us to focus on!
+Click [here](http://goo.gl/forms/scoyJfk2bYjKeq5h1) to vote for the topics you want to see the most.
