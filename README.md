@@ -14,7 +14,7 @@ push all changes as I make them.
   
 ## Information
 
-For all information and questions, please see [the official website]](https://web-apps.co).
+For all information and questions, please see [the official website](https://web-apps.co).
 
 ## Schedule
 
