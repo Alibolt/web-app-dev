@@ -4,7 +4,6 @@
   "description": "npm run scripts for web-app-dev course",
   "main": "serve.js",
   "scripts": {
-    "postinstall": "precommit install",
     "start": "node serve.js",
     "print": "node print.js"
   },
