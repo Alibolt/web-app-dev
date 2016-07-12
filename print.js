@@ -11,6 +11,7 @@ const child = exec(`node serve`, {
 });
 
 child.stdout.on('data', chunk => {
+    chunk = chunk.toString('utf8')
     if ( chunk.indexOf('LISTEN') !== -1 ) {
         const todo = [];
 
