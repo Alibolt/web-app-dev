@@ -9,12 +9,12 @@ push all changes as I make them.
 
 ## Table of Contents
 
- - [Intended Audience](##Intended Audience)
- - [Outcome](##Outcome)
- - [Requirements](##Requirements)
- - [Work & Assignments](##Work & Assignments)
- - [Schedule](##Schedule)
-
+ - [Intended Audience](#intended-audience)
+ - [Outcome](#outcome)
+ - [Requirements](#requirements)
+ - [Work & Assignments](#work--assignments)
+ - [Schedule](#schedule)
+  
 ## Intended Audience
 
 This course is aimed at young students (between the ages of 16 and 25) hoping to enhance their portfolios by adding the
