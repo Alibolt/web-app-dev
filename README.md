@@ -9,38 +9,12 @@ push all changes as I make them.
 
 ## Table of Contents
 
- - [Intended Audience](#intended-audience)
- - [Outcome](#outcome)
- - [Requirements](#requirements)
- - [Work & Assignments](#work--assignments)
+ - [Information & FAQ](#information)
  - [Schedule](#schedule)
   
-## Intended Audience
+## Information
 
-This course is aimed at young students (between the ages of 16 and 25) hoping to enhance their portfolios by adding the
-valuable workplace skills of web application development. Students are recommended to have some prior programming experience,
-but it is not required.
-
-## Outcome
-
-The intended outcome for this course is to have students in a position where they can create basic web applications with at
-the standard expected in open-source development.
-
-## Requirements
-
-Students are encouraged to bring their own computers. There are a limited number of laptops available for using during class
-by the Don Mills Computer Centre, but you will still at least need a computer at home that you can use for working on assignments.
-All required tools will be acquired through guided installations as they are required in the course.
-
-**Fluency in spoken and written English is a must.**
-
-## Work & Assignments
-
-The best practice for a working environment is a working environment. For this purpose, all students will be asked to think of a
-family member or friend who could benefit from a small web application. The only restrictions to this web application will be
-that it cannot be a static website, it must have some end-to-end features such as a live google maps implementation, a messenger,
-etc. Throughout this course, students will work little by little on the web applications for their clients, and hopefully use the
-lessons learned to improve the web applications.
+For all information and questions, please see [the official website]](https://web-apps.co).
 
 ## Schedule
 
@@ -59,8 +33,8 @@ classes (that's why only 15 lessons are planned). Under the title of each class,
  1. **Day #1**
   - `Introductions`: introduce the course and ourselves.
   - `The Insides of the Computer`: learning the fundamental components that make up a computer.
-  - `What on Earth is a web app?`: positioning the web app within the computer and what it consists of.
  2. **Day #2**
+  - `What on Earth is a web app?`: positioning the web app within the computer and what it consists of.
   - `How Web Servers Chat`: an introduction and exploration of HTTP from the server and the client points of view.
   - `The Black Screen with the Green Text`: administrating and manipulating computers through terminals.
  3. **Day #3**
@@ -95,12 +69,22 @@ classes (that's why only 15 lessons are planned). Under the title of each class,
 
 There are two open spots in the schedule for optional topics from the following:
 
+ - **Turning your Web Apps into Native Apps**
+  - Using Electron to build your web apps as native apps.
+ - **Nodebots: Creating Robots in JavaScript**
+  - Learning to interface with the Arduino and creating robots.
+ - **Chatbots & AI**
+  - Creating AIs and chatbots with on the web.
  - **Databases & Build Systems**
-   - SQL vs. NoSql databases, CRUD, injection, saving passwords. + make/npm as build systems.
+   - An introduction to databases, interfacing with databases and the types of databases.
+   - Popular node.js build systems and automating your build process.
  - **Asynchronous Navigation**
-   - ajax for content, nav transitions, the history API.
+   - Using ajax to load entire web pages and using the History API.
+   - Bind your web app to completely avoid browser reloading.
  - **Developing RESTful APIs**
-   - RESTful design of APIs over HTTP/HTTPS; basic vs. digest authentication; CRUD over REST; ajax with REST.
+   - Designing RESTful interfaces to open your back-ends.
+   - RESTful security implementations.
+   - REST, MVC, Ajax, and databases together.
  - **A Guide to Successful Debugging**
    - An approach to debugging; do’s and do not’s.
 
