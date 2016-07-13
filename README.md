@@ -36,10 +36,10 @@ classes (that's why only 15 lessons are planned). Under the title of each class,
  2. **Day #2**
   - `What on Earth is a web app?`: positioning the web app within the computer and what it consists of.
   - `How Web Servers Chat`: an introduction and exploration of HTTP from the server and the client points of view.
-  - `The Black Screen with the Green Text`: administrating and manipulating computers through terminals.
  3. **Day #3**
   - `The Many Lives of your App`: version control systems and their importance in all projects.
   - `The Space where you Code`: development environments and preparing your tools.
+  - `The Black Screen with the Green Text`: administrating and manipulating computers through terminals.
  4. **Day #4**
   - `The Skeleton of the Web Page`: crash course in HTML5.
   - `Prettifying the Web`: learning CSS3 and Bootstrap.
