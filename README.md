@@ -45,7 +45,7 @@ classes (that's why only 15 lessons are planned). Under the title of each class,
   - `Prettifying the Web`: learning CSS3 and Bootstrap.
  5. **Day #5**
   - `Bringing the Web to Life`: crashing through JavaScript, part 1.
-  - `The Good &amp; The Bad`: learning to differentiate the good parts from the bad and linting your code.
+  - `The Good & The Bad`: learning to differentiate the good parts from the bad and linting your code.
  6. **Day #6**
   - `The Bridge between Worlds`: the Document-Object-Model and its importance in a web app.
   - `Nobody Writes JavaScript Anymore`: an intro and roast of jQuery.
