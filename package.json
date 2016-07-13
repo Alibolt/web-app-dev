@@ -20,6 +20,7 @@
   "dependencies": {
     "basic-auth": "^1.0.4",
     "body-parser": "^1.15.2",
+    "express": "^4.14.0",
     "express-http-proxy": "^0.7.1",
     "my-ip": "^1.1.1",
     "next-port": "0.0.8",
