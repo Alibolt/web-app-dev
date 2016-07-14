@@ -1,0 +1,22 @@
+{
+  "name": "web-app-dev",
+  "description": "app to make browsing class content simpler",
+  "main": "app/index.js",
+  "authors": [
+    "Karim Alibhai"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/karimsa/web-app-dev",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.7"
+  }
+}

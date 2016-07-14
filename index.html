@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="viewer">
+<head>
+    <meta charset="UTF-8">
+    <title>IWAD Helper</title>
+
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body ng-controller="TopCtl">
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">Introduction to Web Application Development</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container-fluid ajax-content" ng-if="!ready">
+        <div class="ajax-loader">
+            <img src="img/loader.svg">
+            <div class="text">
+                <span ng-repeat="line in msg.split('\n')">{{line}} ...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" ng-controller="MainCtl" ng-if="ready">
+        <div class="row">
+            <div class="col-xs-3 sidebar-container">
+                <div class="dropdown">
+                  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                      {{inView.name}}
+                      <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                      <li ng-repeat="name in viewable">
+                          <a ng-click="inView.name = name">{{name}}</a>
+                      </li>
+                  </ul>
+                </div>
+
+                <ul class="nav nav-pills nav-stacked sidebar">
+                    <li>
+                        <span class="title">{{inView.name}}</span>
+                        <ul class="nav nav-pills nav-stacked inner-nav" ng-if="inView.name !== 'Videos'">
+                            <li ng-repeat="date in dates">
+                                <a ng-click="open(inView.name, date)">{{ translate(date) }}</a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-pills nav-stacked inner-nav" ng-if="inView.name === 'Videos'">
+                            <li ng-repeat="vid in videos()">
+                                <a ng-click="openVid(vid)">{{ vid.title }}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-9 content-container" ng-if="view || viewSlides.type === 'video'">
+                <div class="btn-group type-toggle" ng-if="view && viewSlides.type !== 'video'">
+                    <a class="btn btn-default" ng-class="{ 'active': viewSlides.type === 'slides' }" ng-click="viewSlides.type = 'slides'">Slides</a>
+                    <a class="btn btn-default" ng-class="{ 'active': viewSlides.type === 'pdf' }" ng-click="viewSlides.type = 'pdf'">PDF</a>
+                </div>
+
+                <div class="reading" ng-if="viewSlides.type === 'reading'" ng-bind-html="reading()"></div>
+                <iframe ng-if="viewSlides.type !== 'reading'" src="{{viewSlides.type === 'slides' ? slides() : (viewSlides.type === 'pdf' ? pdf() : videoSrc())}}" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="pdfjs/build/pdf.js"></script>
+    <script>window.$ = window.jQuery = require('./vendor/jquery/dist/jquery.min.js')</script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
