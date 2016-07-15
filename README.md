@@ -30,10 +30,10 @@ Note: The following is a tentative list of the classes. This will most likely be
 the course. Either in between other lessons, or towards the end, there will be some miscellaneous topics covered or catch-up
 classes (that's why only 15 lessons are planned). Under the title of each class, there is a short list of topics to be covered.
 
- 1. **Day #1**
+ 1. **[Day #1](classes/pdfs/08-12.pdf)**
   - `Introductions`: introduce the course and ourselves.
   - `The Insides of the Computer`: learning the fundamental components that make up a computer.
- 2. **Day #2**
+ 2. **[Day #2](classes/pdfs/08-14.pdf)**
   - `What on Earth is a web app?`: positioning the web app within the computer and what it consists of.
   - `How Web Servers Chat`: an introduction and exploration of HTTP from the server and the client points of view.
  3. **Day #3**
