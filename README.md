@@ -38,12 +38,12 @@ classes (that's why only 15 lessons are planned). Under the title of each class,
   - `How Web Servers Chat`: an introduction and exploration of HTTP from the server and the client points of view.
  3. **Day #3**
   - `The Black Screen with the Green Text`: administrating and manipulating computers through terminals.
+ 4. **Day #4**
   - `The Many Lives of your App`: version control systems and their importance in all projects.
   - `The Space where you Code`: development environments and preparing your tools.
- 4. **Day #4**
   - `The Skeleton of the Web Page`: crash course in HTML5.
-  - `Prettifying the Web`: learning CSS3 and Bootstrap.
  5. **Day #5**
+  - `Prettifying the Web`: learning CSS3 and Bootstrap.
   - `Bringing the Web to Life`: crashing through JavaScript, part 1.
   - `The Good & The Bad`: learning to differentiate the good parts from the bad and linting your code.
  6. **Day #6**
