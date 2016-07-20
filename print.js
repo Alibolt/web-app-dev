@@ -18,20 +18,13 @@ child.stdout.on('data', chunk => {
         fs.readdirSync(path.resolve(__dirname, 'classes')).forEach(file => {
             if ( file.substr(-3) === '.md' ) {
                 file = file.substr(0, file.length - 3);
-                todo.push(new Promise(resolve => {
-                    console.log(`* Printing page to ${path.resolve(__dirname, 'classes', 'pdfs', file + '.pdf')} ...`);
+                console.log(`* Printing page to ${path.resolve(__dirname, 'classes', 'pdfs', file + '.pdf')} ...`);
+                todo.push(
                     Nightmare()
                         .goto(`http://localhost:8080/${file}.md?print-pdf`)
                         .pdf(path.resolve(__dirname, 'classes', 'pdfs', file + '.pdf'))
                         .end()
-                        .then(resolve)
-                        .catch((err) => {
-                            console.log(`Error while printing ${file}: ${err}`)
-
-                            // to avoid stopping
-                            resolve();
-                        });
-                }));
+                );
             }
         });
 
